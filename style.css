@@ -1,0 +1,206 @@
+*,*::before, *::after {
+    box-sizing:border-box;
+}
+
+:root {
+    --light-red: hsl(0, 100%, 67%);
+    --orangey-yellow: hsl(39, 100%, 56%);
+    --green-teal: hsl(166, 100%, 37%);
+    --cobalt-blue: hsl(234, 85%, 45%);
+
+    --reaction-bg: hsla(0, 100%, 67%, 0.05);
+    --memory-bg: hsla(39, 100%, 56%, 0.05);
+    --verbal-bg: hsla(166, 100%, 37%, 0.05);
+    --visual-bg: hsla(234, 85%, 45%, 0.05);
+
+    --light-slate-blue-bg: hsl(252, 100%, 67%);
+    --light-royal-blue-bg: hsl(241, 81%, 54%);
+
+    --violet-blue-circle: hsla(256, 72%, 46%, 1);
+    --persian-blue-circle: hsla(241, 72%, 46%, 0);
+
+    --white: hsl(0, 0%, 100%);
+    --pale-blue: hsl(221, 100%, 96%);
+    --light-lavender: hsl(241, 100%, 89%);
+    --dark-grey-blue: hsl(224, 30%, 27%);
+
+    --font-family: 'Hanken Grotesk', system-ui, 'Segoe UI', sans-serif;
+    --fs-body: 18px;
+
+    --fw-regular:500;
+    --fw-semibold:700;
+    --fw-bold:800;
+}
+
+body{
+    margin: 0;
+    min-height: 100vh;
+    font-family: var(--font-family);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--pale-blue);
+}
+
+main {
+    max-width: 36rem;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+article{
+    background-color: var(--white);
+    padding: 0;
+}
+
+.marks {
+    background-image: linear-gradient(to bottom, var(--light-slate-blue-bg), var(--light-royal-blue-bg));
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border-radius: 0 0 20px 20px;
+}
+
+.marks .header-top{
+    font-size: var(--fs-body);
+    font-weight: var(--fw-semibold);
+    margin: 1.2rem;
+}
+
+.marks h2 {
+    font-size: 1.3rem;
+    font-weight: var(--fw-regular);
+    margin-bottom:0;
+
+}
+
+.marks p {
+    width: 70%;
+    font-size: 0.95rem;
+    text-align: center;
+    color: var(--light-lavender);
+    margin: 0.5rem auto 2.5rem auto;    
+}
+
+.total-marks {
+    border-radius: 50%;
+    width: 8.5rem;
+    aspect-ratio: 1/1;
+    background-image: linear-gradient(to bottom, var(--violet-blue-circle), var(--persian-blue-circle));
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+
+}
+
+.total-marks h1 {
+    font-size: 3.5rem;
+    margin-top:1rem;
+    font-weight: var(--fw-bold);
+    line-height: 1;
+    margin:0;
+}
+
+.total-marks p{
+    font-weight: var(--fw-regular);
+    font-size: 0.8rem;
+    margin: 0;
+    color: var(--light-lavender);
+}
+
+.summary {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    margin:0;
+    gap:1rem;
+}
+
+.summary h2{
+    margin:0;
+    font-size: var(--fs-body);
+    margin-bottom:1rem;
+
+}
+
+.summary-details {
+    display: flex;
+    justify-content: space-between;
+    gap:2rem;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.summary-details .label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: var(--fw-semibold);
+}
+
+.summary-details.reaction .label {
+    color: var(--light-red);
+}
+.summary-details.memory .label {
+    color: var(--orangey-yellow);
+}
+.summary-details.verbal .label {
+    color: var(--green-teal);
+}
+.summary-details.visual .label {
+    color: var(--cobalt-blue);
+}
+
+.summary-details.reaction {
+    background-color: var(--reaction-bg);
+}
+.summary-details.memory {
+    background-color: var(--memory-bg);
+}
+.summary-details.verbal {
+    background-color: var(--verbal-bg);
+}
+.summary-details.visual {
+    background-color: var(--visual-bg);
+}
+
+.summary .continue-button {
+    border-radius: 2rem;
+    padding: 1rem;
+    background-color: var(--dark-grey-blue);
+    color: var(--white);
+    outline: none;
+    border: none;
+    appearance: none;
+    font: inherit;
+    font-size:var(--fs-body);
+    font-weight:var(--fw-regular);
+}
+
+.continue-button:hover {
+    background-image: linear-gradient(to bottom, var(--light-slate-blue-bg), var(--light-royal-blue-bg));
+    color: var(--white);
+    cursor: pointer;
+}
+
+.continue-button:focus-visible{
+    box-shadow: 0 0 0 4px rgb(38, 197, 46);
+}
+
+@media(min-width:36rem){
+
+    article {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    border-radius: 20px;
+    overflow: hidden;
+    }
+}
+
