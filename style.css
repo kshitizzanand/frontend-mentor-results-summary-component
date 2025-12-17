@@ -123,10 +123,9 @@ article{
 }
 
 .summary h2{
-    margin:0;
     font-size: var(--fs-body);
     margin-bottom:1rem;
-
+    margin:0;
 }
 
 .summary-details {
